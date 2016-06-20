@@ -5,11 +5,11 @@
 In programming one usually finds themselves taking one of two approaches to a particular problem
 or structural design, _Functional_ or _Object-Oriented_. While theses two approaches are completely unique in their implementation pattern, they can be used to achieve the same result.
 
-Let's say for example we need to write code that contains customers and a particular bank account and we needed to create some sort of interface to allow information to be properly updated securely. 
+Let's say for example we need to design a system that contains customers and a particular bank account, creating some sort of interface to allow account information to be properly updated.
 
 **Object-Oriented Approach**
 
-First we would setup our classes (constructors) which we represent each party involved.
+In an object-oriented approach we utilize constructor functions (much like classes in other languages) to instantiate a new account for a customer. This constructor will contain properties to persist data and methods to perform specific transactions. In this case, to keep things simple we will allow a customer to do one of three things: check their account balance, deposit into their account, or withdraw from their account.
 
 ```javascript
 function Account(firstName, lastName, accountId) {
@@ -31,6 +31,7 @@ Account.prototype.withdraw = function(amount) {
     this.balance -= amount;
 }
 
+// Instantiate new instance of an account
 let myAccount = new Account('Ian', 'Jabour', 1234);
 
 myAccount.deposit(500);
